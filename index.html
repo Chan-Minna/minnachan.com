@@ -12,7 +12,7 @@
 
 	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 	<link rel="stylesheet" href="/assets/style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		body,
@@ -22,7 +22,7 @@
 		h4,
 		h5,
 		h6 {
-			font-family: "Raleway", sans-serif
+			font-family: 'Noto Sans', sans-serif;
 		}
 	</style>
 </head>
@@ -42,7 +42,7 @@
 			<h4><b>minnachan.sly.io</b></h4>
 		</div>
 		<div class="w3-bar-block">
-			<a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+			<a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-peach"><i
 					class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
 			<a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
@@ -78,21 +78,19 @@
 		<div class="w3-row-padding">
 
 
-			<div class="w3-third w3-container w3-margin-bottom">
-				<model-viewer src="/assets/models/person.glb" alt="A 3D model of a person" ar
-					ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls
-					style="width:100%;height:200px;">
-				</model-viewer>
-				<div class="w3-container w3-white">
-					<p><b>Person</b> 21-05</p>
-					<p> This is still a work in progress. I'm learning how to model a human figure.</p>
-				</div>
-			</div>
+
 			<div class="w3-third w3-container w3-margin-bottom">
 				<img src="/assets/images/coffee.png" style="width:100%;height:200px;object-fit:cover;">
 				<div class="w3-container w3-white">
 					<p><b>Coffee Cup</b> 21-03</p>
 					<p>This coffee cup was made by following <a href="https://youtu.be/7a0cHFs7jkw">this tutorial</a>.</p>
+				</div>
+			</div>
+			<div class="w3-third w3-container w3-margin-bottom">
+				<img src="/assets/images/valentine-choco.jpg" style="width:100%;height:200px;object-fit:cover;">
+				<div class="w3-container w3-white">
+					<p><b>Valentine Chocolate</b> 22-02</p>
+					<p>A box of valentine chocolates.</p>
 				</div>
 			</div>
 			<div class="w3-third w3-container w3-margin-bottom">
@@ -106,7 +104,6 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- Second Photo Grid-->
 		<div class="w3-row-padding">
 
@@ -118,17 +115,17 @@
 				<div class="w3-container w3-white">
 					<p><b>Banana</b> 21-01</p>
 					<p>This is my first model, made by following <a href="https://youtu.be/pRo5Qmxbz28">this
-							tutorial</a>. Not the best, but a decent start.</p>
+							tutorial</a>. </p>
 				</div>
 			</div>
 			<div class="w3-third w3-container w3-margin-bottom">
-				<model-viewer src="/assets/models/wip.glb" alt="Work in progress" ar
+				<model-viewer src="/assets/models/person.glb" alt="A 3D model of a person" ar
 					ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls
 					style="width:100%;height:200px;">
 				</model-viewer>
 				<div class="w3-container w3-white">
-					<p><b>WIP</b></p>
-					<p>Work in progress</p>
+					<p><b>Person</b> 21-05</p>
+					<p> Work in progress. I'm learning how to model a human figure.</p>
 				</div>
 			</div>
 			<div class="w3-third w3-container w3-margin-bottom">
@@ -145,7 +142,7 @@
 
 		<div class="w3-container w3-padding-large" style="margin-bottom:32px" id="about">
 			<h4><b>About Me</b></h4>
-			<p>Aspiring <b>3D</b> modeler. Currently learning to model a human figure. My current goals are to get into rigging and animating. </p>
+			<p>Aspiring <b>3D</b> modeler.  </p>
 			<hr>
 
 			<h4>Technical Skills</h4>
@@ -180,9 +177,9 @@
 						<p>minnachan.pro@gmail.com</p>
 					</a>
 				</div>
-				<div class="w3-half w3-teal">
-					<p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-					<p>US</p>
+				<div class="w3-half w3-peach">
+					<p><i class="fa fa-map-marker w3-xxlarge w3-text-white"></i></p>
+					<p>US, NY</p>
 				</div>
 			</div>
 		</div>
