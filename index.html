@@ -30,7 +30,7 @@
 <body>
     <!-- sidebar/menu -->
 	<nav>
-        <a id="close" href="#" onclick="sb_close()"><i class="fa fa-fw fa-remove icon" onclick="sb_close()"></i></a>
+        <i class="fa fa-remove icon" onclick="sb_close()"></i>
         <img alt="Profile picture" src="/assets/images/pfp.jpg">
         <h1><b>Minna Chan</b></h1>
 		<div id="jumps">
@@ -52,7 +52,7 @@
     <!-- header -->
     <header>
         <a href="#"><img alt="Profile picture" src="/assets/images/pfp.jpg"></a>
-        <i class="fa fa-fw fa-bars icon large" style="cursor:pointer" onclick="sb_open()"></i>
+        <i class="fa fa-fw fa-bars icon large" onclick="sb_open()"></i>
         <h1><b>Minna Chan</b></h1>
     </header>
 
@@ -61,56 +61,56 @@
         <!-- use non basic interaction prompt for only one to reduce cpu usage -->
         <div id="card-container">
 
-            <!-- card -->
-            <div>
-                <img alt="Coffee render" src="/assets/images/coffee.jpg">
-                <div>
-                    <p><b>Coffee Cup</b> 21-03</p>
-                    <p>This coffee cup was made by following <a href="https://youtu.be/7a0cHFs7jkw">this tutorial</a>.</p>
-                </div>
-            </div>
-
-            <!-- card -->
+            <!-- img card -->
             <div>
                 <img alt="Valentine chocolates" src="/assets/images/valentine-choco.jpg">
                 <div>
-                    <p><b>Valentine Chocolate</b> 22-02</p>
+                    <p><b>Valentine Chocolate</b> 2022-02</p>
                     <p>A box of valentine chocolates.</p>
                 </div>
             </div>
 
-            <!-- card -->
+            <!-- img card -->
+            <div>
+                <img alt="Coffee render" src="/assets/images/coffee.jpg">
+                <div>
+                    <p><b>Coffee Cup</b> 2021-03</p>
+                    <p>This coffee cup was made by following <a href="https://youtu.be/7a0cHFs7jkw">this tutorial</a>.</p>
+                </div>
+            </div>
+
+            <!-- video card -->
             <div>
                 <video controls>
                     <source src="/assets/videos/sword-animation.mp4" type="video/mp4">
                 </video>
                 <div>
-                    <p><b>Sword in a Cave</b> 21-01</p>
+                    <p><b>Sword in a Cave</b> 2021-01</p>
                     <p>This is my second model. I followed <a href="https://youtu.be/saxpjudV_88">this tutorial</a>
                         series. (The human model was found <a href="https://www.mixamo.com/">here</a>).</p>
                 </div>
             </div>
 
-            <!-- card -->
+            <!-- model card -->
+            <div>
+                <model-viewer src="/assets/models/person.glb" alt="A 3D model of a person" ar
+                    ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
+                </model-viewer>
+                <div>
+                    <p><b>Person</b> 2021-05</p>
+                    <p> Work in progress. I'm learning how to model a human figure.</p>
+                </div>
+            </div>
+
+            <!-- model card -->
             <div>
                 <model-viewer src="/assets/models/banana.glb" alt="A 3D model of a banana" ar
                     ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls
                     interaction-prompt-style="basic">
                 </model-viewer>
                 <div>
-                    <p><b>Banana</b> 21-01</p>
+                    <p><b>Banana</b> 2020-12</p>
                     <p>This is my first model, made by following <a href="https://youtu.be/pRo5Qmxbz28">this tutorial</a>.</p>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div>
-                <model-viewer src="/assets/models/person.glb" alt="A 3D model of a person" ar
-                    ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
-                </model-viewer>
-                <div>
-                    <p><b>Person</b> 21-05</p>
-                    <p> Work in progress. I'm learning how to model a human figure.</p>
                 </div>
             </div>
 

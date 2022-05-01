@@ -29,26 +29,18 @@ nav > img {
     border-radius: 4px;
 }
 
-nav a {
+nav a, .icon {
     text-decoration: none;
     color: #444;
 }
 
-nav > * {
+nav > *, #jumps > a > i, #card-container > div > :last-child, #about, #contact  {
     margin: 8px 16px;
 }
 
 #jumps {
     margin-left: 0;
     margin-right: 0;
-}
-
-#jumps > a {
-    padding: 8px 16px;
-}
-
-#jumps > a > i {
-    margin-right: 16px;
 }
 
 @keyframes animateleft {
@@ -62,22 +54,16 @@ nav > * {
     }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 993px) {
     nav {
         display: block !important;
     }
-    #overlay {
+    #overlay, header, nav > i {
         display: none !important;
-    }
-    header {
-        display: none;
-    }
-    #close {
-        display: none;
     }
 }
 
-@media (max-width: 949px) {
+@media (max-width: 992px) {
     nav {
         display: none;
     }
@@ -87,11 +73,8 @@ nav > * {
     }
 }
 
-#close {
+nav > i {
     float: right;
-}
-
-#close > i {
     cursor: pointer;
     font-size: 64px !important;
 }
@@ -152,18 +135,24 @@ header > h1 {
     margin: 0;
 }
 
+header > i {
+    cursor: pointer
+}
+
 #card-container {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem
 }
 
 #card-container > div {
-    vertical-align: top;
-    display: inline-block;
-    width: 300px;
-    height: 330px;
     background-color: #fff;
-    margin: 0.5em;
-    text-align: left;
+    margin: 0.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 660px
 }
 
 #card-container > div > :first-child {
@@ -179,24 +168,12 @@ header > h1 {
     object-fit: contain;
 }
 
-#card-container > div > :last-child {
-    margin: 0.5em;
-}
-
-.icon {
-    color: #444;
-}
-
 .icon:hover {
     opacity: 0.6;
 }
 
 .large {
     font-size: 36px !important;
-}
-
-#about {
-    margin: 16px;
 }
 
 .bar {
@@ -232,10 +209,6 @@ footer {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-}
-
-#contact {
-    margin: 10px;
 }
 
 #footer-flex {
