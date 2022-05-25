@@ -143,6 +143,7 @@ header > i {
     display: flex;
     flex-wrap: wrap;
     padding: 0.5rem
+    justify-content: center;
 }
 
 #card-container > div {
