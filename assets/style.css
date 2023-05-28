@@ -25,7 +25,8 @@ nav {
 }
 
 nav > img {
-    width: 45%;
+    width: 50%;
+    height: 96px;
     border-radius: 4px;
 }
 
@@ -126,7 +127,7 @@ header {
 }
 
 header > a > img {
-    width: 3.5rem;
+    height: 36px;
     float: right;
     border-radius: 50%;
     margin: 6px;
