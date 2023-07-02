@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fff"/> 
+<link rel="stylesheet" href="assets/style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css">
+<!-- SEO tags -->
+<title>Minna Chan</title>
+<meta name="description" content="Minna Chan is a 3D modeler from New York"/>
+<meta name="keywords" content="minna, chan, minna chan, 3d modeling, blender">
+<meta property="og:title" content="Minna Chan"/>
+<meta property="og:description" content="Minna Chan is a 3D modeler from New York"/>
+<meta property="og:image" content="https://minnachan.com/assets/images/favicon.png"/>
+<meta property="og:url" content="https://minnachan.com"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Minna Chan"/>
+<meta name="twitter:description" content="Minna Chan is a 3D modeler from New York"/>
+<meta name="twitter:image" content="https://minnachan.com/assets/images/favicon.png"/>
+<meta name="twitter:site" content="@minnachan3d"/>
+<meta name="twitter:creator" content="@minnachan3d"/>
+<link rel="canonical" href="https://minnachan.com"/>
+<link rel="icon" href="/assets/images/favicon.png" type="image/png"/>
+<link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml"/>
+</head>
+<body>
+    <!-- sidebar/menu -->
+    <nav>
+        <i class="fa fa-times icon" onclick="sb_close()"></i>
+        <img alt="Logo" src="/assets/images/logo.svg">
+        <h1><b>Minna Chan</b></h1>
+		<div id="jumps">
+			<a href="#" onclick="sb_close()" style="color:#a37800"><i class="fa fa-fw fa-th-large"></i>PORTFOLIO</a>
+			<a href="#about" onclick="sb_close()"><i class="fa fa-fw fa-user"></i>ABOUT</a>
+			<a href="#contact" onclick="sb_close()"><i class="fa fa-fw fa-envelope"></i>CONTACT</a>
+		</div>
+        <div>
+            <a href="https://www.instagram.com/minnachan3d"><i class="fab fa-instagram icon"></i></a>
+            <a href="https://twitter.com/minnachan3d"><i class="fab fa-twitter icon"></i></a>
+            <a href="https://www.linkedin.com/in/minna-chan"><i class="fab fa-linkedin icon"></i></a>
+            <a href="https://github.com/chan-minna"><i class="fab fa-github icon"></i></a>
+            <a href="https://www.artstation.com/minna-chan"><i class="fab fa-artstation icon"></i></a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- overlay effect when opening sidebar on small screens -->
+    <div id="overlay" onclick="sb_close()"></div>
+
+    <!-- header -->
+    <header>
+        <a href="#"><img alt="Logo" src="/assets/images/logo.svg"></a>
+        <i class="fa fa-fw fa-bars icon large" onclick="sb_open()"></i>
+        <h2><b>Minna Chan</b></h2>
+    </header>
+
+    <div id="content">
+
+        <!-- use non basic interaction prompt for only one to reduce cpu usage -->
+        <div id="card-container">
+		
+            <!-- img card -->
+            <div>
+                <img alt="Isometric Cafe" src="/assets/images/cafe1.jpg">
+                <div>
+                    <p><b>Isometric Cafe</b> 2023-04</p>
+                    <p>A cozy cafe.</p>
+                </div>
+            </div>
+		
+            <!-- img card -->
+            <div>
+                <img alt="Charlotte Cake" src="/assets/images/charlottecake.jpg">
+                <div>
+                    <p><b>Charlotte Cake</b> 2023-04</p>
+                    <p>A charlotte cake using toon shaders.</p>
+                </div>
+            </div>
+
+            <!-- img card -->
+            <div>
+                <img alt="Pokeball Terrarium" src="/assets/images/duck-terrarium.jpg">
+                <div>
+                    <p><b>Pokeball Terrarium</b> 2022-11</p>
+                    <p>A pokeball terrarium with Psyduck in it.</p>
+                </div>
+            </div>
+
+            <!-- video card -->
+            <div>
+                <video controls style="background: #F9F0B1;">
+                    <source src="/assets/videos/tetris-compressed.mp4" type="video/mp4">
+                </video>
+                <div>
+                    <p><b>Tetris</b> 2022-09</p>
+                    <p>My first softbody physics render using cloth simulation.</p>
+                </div>
+            </div>
+
+            <!-- img card -->
+            <div>
+                <img alt="Seaside Render" src="/assets/images/beach-seagull.jpg">
+                <div>
+                    <p><b>Seaside</b> 2022-09</p>
+                    <p>A render of the seaside with a seagull.</p>
+                </div>
+            </div>
+
+            <!-- img card -->
+            <div>
+                <img alt="Valentine Chocolates" src="/assets/images/valentine-choco.jpg">
+                <div>
+                    <p><b>Valentine Chocolate</b> 2022-02</p>
+                    <p>A box of valentine chocolates.</p>
+                </div>
+            </div>
+
+            <!-- img card -->
+            <div>
+                <img alt="Coffee Render" src="/assets/images/coffee.jpg">
+                <div>
+                    <p><b>Coffee Cup</b> 2021-03</p>
+                    <p>This coffee cup was made by following <a href="https://youtu.be/7a0cHFs7jkw">this tutorial</a>.</p>
+                </div>
+            </div>
+
+            <!-- video card -->
+            <div>
+                <video controls style="background: #124051;">
+                    <source src="/assets/videos/sword-animation.mp4" type="video/mp4">
+                </video>
+                <div>
+                    <p><b>Sword in a Cave</b> 2021-01</p>
+                    <p>This is my second model. I followed <a href="https://youtu.be/saxpjudV_88">this tutorial</a>
+                        series. (The human model was found <a href="https://www.mixamo.com/">here</a>).</p>
+                </div>
+            </div>
+
+            <!-- model card -->
+            <div>
+                <model-viewer src="/assets/models/person.glb" alt="A 3D model of a person" ar
+                    ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
+                </model-viewer>
+                <div>
+                    <p><b>Person</b> 2021-05</p>
+                    <p>My first attempt at modeling a human figure.</p>
+                </div>
+            </div>
+
+            <!-- model card -->
+            <div>
+                <model-viewer src="/assets/models/banana.glb" alt="A 3D model of a banana" ar
+                    ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls
+                    interaction-prompt-style="basic">
+                </model-viewer>
+                <div>
+                    <p><b>Banana</b> 2020-12</p>
+                    <p>This is my first model, made by following <a href="https://youtu.be/pRo5Qmxbz28">this tutorial</a>.</p>
+                </div>
+            </div>
+		
+        </div>
+
+        <!-- about -->
+        <div id="about">
+			<h3><b>About Me</b></h3>
+			<p>Aspiring <b>3D</b> modeler.</p>
+			<h3>Technical Skills</h3>
+			<p>3D Modeling</p>
+			<div class="bar"><div style="width:95%">95%</div></div>
+			<p>Digital Art</p>
+			<div class="bar"><div style="width:75%">75%</div></div>
+            <p>Computer Aided Design (CAD)</p>
+			<div class="bar"><div style="width:55%">55%</div></div>
+            <div id="resume">
+                <a href="https://drive.google.com/file/d/1agg0Xj8oCR0Tf0Y2eUDXG2ZfdBmCyl3d/view?usp=sharing">
+                    <div><i class="fa fa-eye"></i>Preview Resume</div>
+                </a>
+            </div>
+		</div>
+
+        <!-- contact -->
+        <footer>
+            <h3 id="contact">
+				<b>Contact Me</b>
+                <a href="https://www.instagram.com/minnachan3d"><i class="fab fa-instagram icon"></i></a>
+                <a href="https://twitter.com/minnachan3d"><i class="fab fa-twitter icon"></i></a>
+                <a href="https://www.linkedin.com/in/minna-chan"><i class="fab fa-linkedin icon"></i></a>
+                <a href="https://github.com/chan-minna"><i class="fab fa-github icon"></i></a>
+                <a href="https://www.artstation.com/minna-chan"><i class="fab fa-artstation icon"></i></a>
+			</h3>
+            <div id="footer-flex">
+                <div>
+                    <i class="fa fa-envelope large"></i>
+                    <a href="mailto:minnachan3d@gmail.com">minnachan3d@gmail.com</a>
+                </div>
+                <div>
+                    <i class="fa fa-map-marker-alt large"></i>
+                    New York, US
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+<script src="assets/app.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html>
