@@ -35,7 +35,7 @@ nav a, .icon {
     color: #444;
 }
 
-nav > *, #jumps > a > i, #card-container > div > :last-child, #about, #contact  {
+nav > *, #jumps > a > i, #about, #contact  {
     margin: 8px 16px;
 }
 
@@ -65,6 +65,28 @@ nav > *, #jumps > a > i, #card-container > div > :last-child, #about, #contact  
     #content {
         margin-top: 0 !important;
     }
+    #card-container > div.modal {
+        background-color: rgba(0, 0, 0, .7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #card-container > div.modal > div {
+        width: 50em;
+        padding: 2em;
+        border-radius: 1em;
+    }
+    #card-container > div.modal > div > :first-child {
+        width: 30em;
+        height: 100%;
+        border-radius: 1em;
+    }
+    #card-container > div.modal > div > div {
+        display:inline-block;
+        vertical-align: top;
+        margin-left: 2em;
+        width: 15em;
+    }
 }
 
 @media (max-width: 992px) {
@@ -74,6 +96,25 @@ nav > *, #jumps > a > i, #card-container > div > :last-child, #about, #contact  
     #content {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+    #card-container > div.modal > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #card-container > div.modal > div > :first-child {
+        max-width: 94%;
+        max-height: 60%;
+        object-fit: contain;
+        border-radius: 1em;
+        margin: 2%;
+    }
+    #card-container > div.modal > div > div {
+        max-width: 100%;
+        padding: 0 1em;
     }
 }
 
@@ -147,31 +188,77 @@ header > i {
 #card-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0.5rem;
-    justify-content: center;
+    padding: .8rem;
 }
 
-#card-container > div {
-    background-color: #fff;
-    margin: 0.5rem;
+#card-container > div.card {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 320px;
-    max-width: 660px;
+    margin: 4px;
+    position: relative;
 }
 
-#card-container > div > :first-child {
+#card-container > div.card > :first-child  {
     height: 200px;
-    width: 100%;
-}
-
-#card-container > div > img:first-child {
+    margin: 0;
     object-fit: cover;
 }
 
-#card-container > div > video:first-child {
-    object-fit: contain;
+#card-container > div.card > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: .5rem;
+    background: rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+#card-container > div.card:hover > div {
+    visibility: visible;
+}
+
+#card-container > div.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    color: #444;
+    z-index: 4;
+    cursor: pointer;
+    overflow: auto;
+}
+
+#card-container > div.modal > div {
+    background-color: white;
+    margin: auto 0;
+}
+
+model-viewer {
+    height: 512px !important;
+    display: inline-block;
+}
+
+.tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .3em;
+    padding: .2em;
+    color: white;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: .5em;
+    font-size: small;
+    font-weight: bold;
 }
 
 .icon:hover {
