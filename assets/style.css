@@ -197,6 +197,7 @@ header > i {
     flex-direction: column;
     margin: 4px;
     position: relative;
+    max-width: calc(100% - 8px);
 }
 
 #card-container > div.card > :first-child  {
@@ -223,6 +224,10 @@ header > i {
 
 #card-container > div.card:hover > div {
     visibility: visible;
+}
+
+#card-container > :nth-last-child(2) {
+    max-width: min(480px, calc(100% - 8px)) !important;
 }
 
 #card-container > div.modal {
@@ -313,7 +318,7 @@ footer {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 300px;
+    min-width: 200px;
     color: #fff;
     text-align: center;
     padding: 10px;
