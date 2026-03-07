@@ -1,0 +1,635 @@
+body {
+    padding: 0;
+    margin: 0 auto 0 auto;
+    max-width: 1600px;
+    font-family: "Noto Sans", Arial, sans-serif;
+    background-color: #eee;
+    color: #444;
+}
+
+a {
+    color: #a37800;
+}
+
+nav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 3;
+    overflow: auto;
+    animation: animateleft 0.4s;
+    background-color: #fff;
+    display: none;
+    top: 0;
+    font-size: 18px;
+}
+
+nav > img {
+    width: 50%;
+    height: 96px;
+    border-radius: 4px;
+}
+
+nav a, .icon {
+    text-decoration: none;
+    color: #444;
+}
+
+nav > *, #jumps > a > i, #about, #contact  {
+    margin: 8px 16px;
+}
+
+#jumps {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 993px) {
+    nav {
+        display: block !important;
+        animation: none;
+    }
+    #overlay, header, nav > i {
+        display: none !important;
+    }
+    #content {
+        margin-top: 0 !important;
+    }
+    #card-container > div.card {
+        flex: 1;
+        max-width: calc(33.3333% - 8px);
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+        background: #fff;
+        border-radius: 1em;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .carousel-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .carousel-slide {
+        display: none;
+        max-width: 100%;
+        max-height: 80vh;
+    }
+    .carousel-slide.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+    .carousel-slide img,
+    .carousel-slide video {
+        width: calc(80vh * var(--ratio, 1));
+        max-width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+    .modal-close {
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 44px;
+        height: 44px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: #fff;
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1001;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-close:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    .modal-nav:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .modal-nav-prev {
+        left: 20px;
+    }
+    .modal-nav-next {
+        right: 20px;
+    }
+    .modal-info {
+        width: 300px;
+        min-width: 300px;
+        padding: 20px;
+        border-left: 1px solid #eee;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .modal-info h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+    }
+    .modal-info h3 {
+        margin: 0 0 1rem;
+        color: #666;
+        font-weight: normal;
+    }
+    .modal-info p {
+        line-height: 1.6;
+    }
+    .carousel-nav {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+@media (max-width: 992px) {
+    nav {
+        display: none;
+    }
+    #content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #card-container > div.card {
+        max-width: calc(100% - 8px);
+    }
+    .modal {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        height: 100vh;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-content {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+    .modal-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 44px;
+        height: 44px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: #fff;
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .modal-content {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-slide {
+        display: none;
+    }
+    .carousel-slide.active {
+        display: block;
+    }
+    .carousel-slide img,
+    .carousel-slide video {
+        max-width: 100%;
+        max-height: 60vh;
+        object-fit: contain;
+        border-radius: 0 !important;
+    }
+    .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-nav-prev {
+        left: 0;
+    }
+    .modal-nav-next {
+        right: 0;
+    }
+    .modal-info {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        background: #fff;
+    }
+    .modal-info h2 {
+        margin: 0 0 0.5rem;
+    }
+    .modal-info h3 {
+        margin: 0 0 0.5rem;
+        color: #666;
+        font-weight: normal;
+    }
+    .carousel-nav {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+}
+
+nav > i {
+    float: right;
+    cursor: pointer;
+    font-size: 64px !important;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    animation: opac 0.8s;
+    cursor: pointer;
+}
+
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#jumps > a {
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+#jumps > a:hover {
+    background-color: #ccc;
+}
+
+#content {
+    margin-left: 300px;
+    margin-top: 3em;
+}
+
+header {
+    background-color: #fff;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+header > a > img {
+    height: 36px;
+    float: right;
+    border-radius: 50%;
+    margin: 3px;
+    opacity: 0.7;
+}
+
+header > h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 32px;
+}
+
+header > i {
+    cursor: pointer
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .8rem;
+}
+
+#card-container > div.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    position: relative;
+}
+
+#card-container > div.card > :first-child  {
+    height: 200px;
+    margin: 0;
+    object-fit: cover;
+}
+
+#card-container > div.card > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: .5rem;
+    background: rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+#card-container > div.card:hover > div {
+    visibility: visible;
+    opacity: 1;
+}
+
+#card-container > :nth-last-child(2) {
+    max-width: min(480px, calc(100% - 8px)) !important;
+}
+
+#card-container > div.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    color: #444;
+    z-index: 4;
+cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#card-container > div.modal:focus {
+    outline: none !important;
+}
+
+#card-container > div.modal > div {
+    background-color: white;
+    margin: auto 0;
+}
+
+model-viewer {
+    height: 512px !important;
+    display: inline-block;
+}
+
+.tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .3em;
+    padding: .2em;
+    color: white;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: .5em;
+    font-size: small;
+    font-weight: bold;
+}
+
+.icon:hover {
+    opacity: 0.6;
+}
+
+.large {
+    font-size: 36px !important;
+}
+
+.bar {
+    background-color: #aaa;
+    text-align: center;
+}
+
+.bar > div {
+    background-color: #ffd45c;
+    padding: 8px 16px;
+    box-sizing: border-box;
+}
+
+#resume {
+    text-align: center;
+    font-size: 20px;
+}
+
+#resume > a > div {
+    background-color: #666;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    color: #fff;
+}
+
+#resume > a > div > i {
+    margin-right: 1em;
+}
+
+footer {
+    background-color: #aaa;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#footer-flex > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#footer-flex > div:first-child {
+    background-color: #666;
+}
+
+#footer-flex > div:first-child > a {
+    color: #fff;
+}
+
+#footer-flex > div:last-child {
+    background-color: #a37800;
+}
+
+.card.hidden {
+    display: none;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 1em;
+}
+
+.carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.carousel-btn {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.5em;
+    font-size: 1em;
+}
+
+.carousel-btn:hover {
+    opacity: 0.7;
+}
+
+.carousel-counter {
+    font-weight: bold;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.card-tags .tag {
+    flex-shrink: 0;
+    padding: 0.4em 0.8em;
+    border: 1px solid #ccc;
+    border-radius: .8em;
+    background: #fff;
+    color: #444;
+    font-size: 14px;
+    position: static;
+    margin: 0;
+}
+
+.tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.filter-btn {
+    flex-shrink: 0;
+    padding: 0.4em 0.8em;
+    border: 1px solid #ccc;
+    border-radius: .8em;
+    background: #fff;
+    color: #444;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #eee;
+    border-color: #aaa;
+}
+
+.filter-btn.active {
+    background: #a37800;
+    border-color: #a37800;
+    color: #fff;
+}

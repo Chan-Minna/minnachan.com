@@ -1,0 +1,6 @@
+_site/
+.hugo_build.lock
+bin/
+resources/
+.DS_Store
+*.log

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fff"/>
+{{ $css := resources.Get "assets/style.css" | minify }}
+<style>{{ $css.Content | safeCSS }}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"></noscript>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="Minna Chan is a 3D modeler from New York"/>
+<meta name="keywords" content="minna, chan, minna chan, 3d modeling, blender">
+<meta property="og:title" content="{{ .Site.Title }}"/>
+<meta property="og:description" content="Minna Chan is a 3D modeler from New York"/>
+<meta property="og:image" content="{{ "assets/images/favicon.png" | absURL }}"/>
+<meta property="og:url" content="{{ "" | absURL }}"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{{ .Site.Title }}"/>
+<meta name="twitter:description" content="Minna Chan is a 3D modeler from New York"/>
+<meta name="twitter:image" content="{{ "assets/images/favicon.png" | absURL }}"/>
+<meta name="twitter:site" content="@minnachan3d"/>
+<meta name="twitter:creator" content="@minnachan3d"/>
+<link rel="canonical" href="{{ "" | absURL }}"/>
+<link rel="icon" href="{{ "assets/images/favicon.png" | relURL }}" type="image/png"/>
+<link rel="icon" href="{{ "assets/images/logo.svg" | relURL }}" type="image/svg+xml"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ "" | absURL }}"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minna Chan",
+  "url": "{{ "" | absURL }}",
+  "jobTitle": "3D Modeler",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/minnachan3d",
+    "https://twitter.com/minnachan3d",
+    "https://www.linkedin.com/in/minna-chan",
+    "https://github.com/chan-minna",
+    "https://www.artstation.com/minna-chan"
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+    <i aria-hidden="true" class="fa fa-times icon" onclick="sb_close()"></i>
+    <img alt="Minna Chan Logo" src="{{ "assets/images/logo.svg" | relURL }}">
+    <h1><b>Minna Chan</b></h1>
+    <div class="tag-filter">
+        <button class="filter-btn active" data-tag="">All</button>
+        <button class="filter-btn" data-tag="3d">3D</button>
+        <button class="filter-btn" data-tag="environment">Environment</button>
+        <button class="filter-btn" data-tag="animation">Animation</button>
+        <button class="filter-btn" data-tag="character">Character</button>
+        <button class="filter-btn" data-tag="2d">2D</button>
+    </div>
+    <div id="jumps">
+        <a href="#" onclick="sb_close()" style="color:#a37800"><i aria-hidden="true" class="fa fa-fw fa-th-large"></i>PORTFOLIO</a>
+        <a href="#about" onclick="sb_close()"><i aria-hidden="true" class="fa fa-fw fa-user"></i>ABOUT</a>
+        <a href="#contact" onclick="sb_close()"><i aria-hidden="true" class="fa fa-fw fa-envelope"></i>CONTACT</a>
+    </div>
+    <div>
+        <a href="https://www.instagram.com/minnachan3d" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram icon"></i></a>
+        <a href="https://twitter.com/minnachan3d" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter icon"></i></a>
+        <a href="https://www.linkedin.com/in/minna-chan" aria-label="LinkedIn"><i aria-hidden="true" class="fab fa-linkedin icon"></i></a>
+        <a href="https://github.com/chan-minna" aria-label="GitHub"><i aria-hidden="true" class="fab fa-github icon"></i></a>
+        <a href="https://www.artstation.com/minna-chan" aria-label="ArtStation"><i aria-hidden="true" class="fab fa-artstation icon"></i></a>
+    </div>
+</nav>
+
+<div id="overlay" onclick="sb_close()"></div>
+
+<header>
+    <a href="#" aria-label="Home"><img alt="Minna Chan Logo" src="{{ "assets/images/logo.svg" | relURL }}"></a>
+    <i aria-hidden="true" class="fa fa-fw fa-bars icon large" onclick="sb_open()"></i>
+    <h2><b>Minna Chan</b></h2>
+</header>
+
+<div id="content" role="main">
+
+<div id="card-container">
+{{ $pages := sort .Site.RegularPages "Date" "desc" }}
+{{ $hasModel := false }}
+{{ range $page := $pages }}
+  {{ range $page.Params.images }}
+    {{ if eq .type "model" }}
+      {{ $hasModel = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ range $page := $pages }}
+{{ $anchor := $page.Title | lower | replaceRE "[^a-z0-9]" "-" }}
+{{ $resources := $page.Resources }}
+    <div class="card" data-anchor="{{ $anchor }}" data-tags="{{ range $i, $t := $page.Params.tags }}{{ if $i }} {{ end }}{{ $t }}{{ end }}">
+{{ if $page.Params.thumbnail }}
+{{ $thumb := $resources.GetMatch $page.Params.thumbnail }}
+{{ if $thumb }}
+{{ $resizedThumb := $thumb.Fit "720x1080 webp q50" }}
+        <img alt="{{ $page.Title }}" src="{{ $resizedThumb.RelPermalink }}" decoding="async">
+{{ end }}
+{{ else if $page.Params.images }}
+{{ range $firstImg := $page.Params.images }}
+{{ if ne $firstImg.type "video" }}
+{{ $resource := $resources.GetMatch $firstImg.src }}
+{{ if $resource }}
+{{ $resizedThumb := $resource.Fit "720x1080 webp q50" }}
+        <img alt="{{ $page.Title }}" src="{{ $resizedThumb.RelPermalink }}" decoding="async">
+{{ end }}
+{{ break }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ $hasVideo := false }}
+{{ range $page.Params.images }}{{ if eq .type "video" }}{{ $hasVideo = true }}{{ end }}{{ end }}
+{{ if $hasVideo }}        <span class="tag">VID</span>
+{{ end }}        <div>{{ $page.Title }}</div>
+    </div>
+<div class="modal" id="modal-{{ $anchor }}">
+        <button aria-label="Close modal" class="modal-close" onclick="closeModal('modal-{{ $anchor }}')">×</button>
+        <div class="modal-content">
+{{ if gt (len $page.Params.images) 1 }}
+            <button aria-label="Previous slide" class="modal-nav modal-nav-prev" onclick="prevSlide(this)">❮</button>
+{{ end }}
+            <div class="carousel-container">
+{{ range $imgIndex, $img := $page.Params.images }}
+{{ $resource := $resources.GetMatch $img.src }}
+{{ if $resource }}
+{{ if and (ne $img.type "video") (eq $imgIndex 0) }}
+{{ $resizedThumb := $resource.Fit "720x1080 webp q50" }}
+                <div class="carousel-slide active" data-index="{{ $imgIndex }}" data-src="{{ $resource.RelPermalink }}" data-description="{{ $img.description }}">
+                    <img src="{{ $resizedThumb.RelPermalink }}" alt="{{ $img.description }}" style="--ratio: {{ printf "%.4f" (div (float $resource.Width) $resource.Height) }}">
+                </div>
+{{ else if eq $img.type "video" }}
+{{ $thumb := $resources.GetMatch $page.Params.thumbnail }}
+{{ $resizedThumb := $thumb.Fit "720x1080 webp q50" }}
+                <div class="carousel-slide{{ if eq $imgIndex 0 }} active{{ end }}" data-index="{{ $imgIndex }}" data-src="{{ $resource.RelPermalink }}" data-description="{{ $img.description }}">
+                    <video controls poster="{{ $resizedThumb.RelPermalink }}" style="--ratio: {{ printf "%.4f" (div (float $thumb.Width) $thumb.Height) }}">
+                        <source type="video/mp4">
+                    </video>
+                </div>
+{{ else }}
+                <div class="carousel-slide{{ if eq $imgIndex 0 }} active{{ end }}" data-index="{{ $imgIndex }}" data-src="{{ $resource.RelPermalink }}" data-description="{{ $img.description }}">
+                    <img alt="{{ $img.description }}" style="--ratio: {{ printf "%.4f" (div (float $resource.Width) $resource.Height) }}">
+                </div>
+{{ end }}
+{{ end }}
+{{ end }}
+            </div>
+{{ if gt (len $page.Params.images) 1 }}
+            <button aria-label="Next slide" class="modal-nav modal-nav-next" onclick="nextSlide(this)">❯</button>
+{{ end }}
+        </div>
+        <div class="modal-info">
+            <h2>{{ $page.Title }}</h2>
+            <h3>{{ $page.Date.Format "January 2006" }}</h3>
+            <p class="image-description"></p>
+{{ if gt (len $page.Params.images) 1 }}
+            <div class="carousel-nav">
+                <span class="carousel-counter"><span class="current">1</span>/{{ len $page.Params.images }}</span>
+            </div>
+{{ end }}
+        </div>
+    </div>
+{{ end }}
+</div>
+
+<div id="about">
+    <h3><b>About Me</b></h3>
+    <p>Aspiring <b>3D</b> modeler.</p>
+    <h3>Technical Skills</h3>
+    <p>3D Modeling (Blender, Maya)</p>
+    <div class="bar"><div style="width:95%">95%</div></div>
+    <p>Computer Aided Design (Fusion 360)</p>
+    <div class="bar"><div style="width:80%">80%</div></div>
+    <p>Digital Art</p>
+    <div class="bar"><div style="width:70%">70%</div></div>
+    <div id="resume">
+        <a href="https://drive.google.com/file/d/15mMuk5_btDOu_72vQm26NvWNxsROp8em/view?usp=sharing">
+            <div><i aria-hidden="true" class="fa fa-eye"></i>Preview Resume</div>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <h3 id="contact">
+        <b>Contact Me</b>
+        <a href="https://www.instagram.com/minnachan3d" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram icon"></i></a>
+        <a href="https://twitter.com/minnachan3d" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter icon"></i></a>
+        <a href="https://www.linkedin.com/in/minna-chan" aria-label="LinkedIn"><i aria-hidden="true" class="fab fa-linkedin icon"></i></a>
+        <a href="https://github.com/chan-minna" aria-label="GitHub"><i aria-hidden="true" class="fab fa-github icon"></i></a>
+        <a href="https://www.artstation.com/minna-chan" aria-label="ArtStation"><i aria-hidden="true" class="fab fa-artstation icon"></i></a>
+    </h3>
+    <div id="footer-flex">
+        <div>
+            <i aria-hidden="true" class="fa fa-envelope large"></i>
+            <a href="mailto:minnachan3d@gmail.com">minnachan3d@gmail.com</a>
+        </div>
+        <div>
+            <i aria-hidden="true" class="fa fa-map-marker-alt large"></i>
+            New York, US
+        </div>
+    </div>
+</footer>
+
+</div>
+{{ $js := resources.Get "assets/app.js" | minify }}
+<script defer src="{{ $js.RelPermalink }}"></script>
+{{ if $hasModel }}
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+{{ end }}
+</body>
+</html>

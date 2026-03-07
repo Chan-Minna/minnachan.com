@@ -1,0 +1,24 @@
+baseURL = "https://minnachan.com"
+languageCode = "en-us"
+title = "Minna Chan"
+publishDir = "_site"
+
+[minify]
+  minifyOutput = true
+  [minify.html]
+    omitComments = true
+  [minify.css]
+    simplify = true
+  [minify.js]
+    optimize = true
+
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 50
+  compression = "lossy"
+  [imaging.webp]
+    method = 6
+    useSharpYuv = true
+
+[sitemap]
+  disabled = true
