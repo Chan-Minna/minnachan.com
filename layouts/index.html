@@ -10,12 +10,9 @@
 <style>{{ $css.Content | safeCSS }}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 <title>{{ .Site.Title }}</title>
@@ -35,42 +32,44 @@
 <link rel="canonical" href="{{ "" | absURL }}"/>
 <link rel="icon" href="{{ "assets/images/favicon.png" | relURL }}" type="image/png"/>
 <link rel="icon" href="{{ "assets/images/logo.svg" | relURL }}" type="image/svg+xml"/>
+<link rel="preload" as="image" href="{{ "assets/images/logo.svg" | relURL }}"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ "" | absURL }}"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Minna Chan",
-  "url": "{{ "" | absURL }}",
-  "jobTitle": "3D Modeler",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "New York",
-    "addressRegion": "NY",
-    "addressCountry": "US"
-  },
-  "sameAs": [
-    "https://www.instagram.com/minnachan3d",
-    "https://twitter.com/minnachan3d",
-    "https://www.linkedin.com/in/minna-chan",
-    "https://github.com/chan-minna",
-    "https://www.artstation.com/minna-chan"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ "" | absURL }}"
+    },
+    {
+      "@type": "Person",
+      "name": "Minna Chan",
+      "url": "{{ "" | absURL }}",
+      "jobTitle": "3D Modeler",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/minnachan3d",
+        "https://twitter.com/minnachan3d",
+        "https://www.linkedin.com/in/minna-chan",
+        "https://github.com/chan-minna",
+        "https://www.artstation.com/minna-chan"
+      ]
+    }
   ]
 }
 </script>
 </head>
 <body>
 <nav>
-    <i aria-hidden="true" class="fa fa-times icon" onclick="sb_close()"></i>
+    <button type="button" aria-label="Close navigation" class="icon nav-close"><i aria-hidden="true" class="fa fa-times"></i></button>
     <img alt="Minna Chan Logo" src="{{ "assets/images/logo.svg" | relURL }}">
-    <h1><b>Minna Chan</b></h1>
+    <h1>Minna Chan</h1>
     <div class="tag-filter">
         <button class="filter-btn active" data-tag="">All</button>
         <button class="filter-btn" data-tag="3d">3D</button>
@@ -80,9 +79,9 @@
         <button class="filter-btn" data-tag="2d">2D</button>
     </div>
     <div id="jumps">
-        <a href="#" onclick="sb_close()" style="color:#a37800"><i aria-hidden="true" class="fa fa-fw fa-th-large"></i>PORTFOLIO</a>
-        <a href="#about" onclick="sb_close()"><i aria-hidden="true" class="fa fa-fw fa-user"></i>ABOUT</a>
-        <a href="#contact" onclick="sb_close()"><i aria-hidden="true" class="fa fa-fw fa-envelope"></i>CONTACT</a>
+        <a href="#" class="portfolio-link"><i aria-hidden="true" class="fa fa-fw fa-th-large"></i>PORTFOLIO</a>
+        <a href="#about"><i aria-hidden="true" class="fa fa-fw fa-user"></i>ABOUT</a>
+        <a href="#contact"><i aria-hidden="true" class="fa fa-fw fa-envelope"></i>CONTACT</a>
     </div>
     <div>
         <a href="https://www.instagram.com/minnachan3d" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram icon"></i></a>
@@ -93,16 +92,17 @@
     </div>
 </nav>
 
-<div id="overlay" onclick="sb_close()"></div>
+<div id="overlay"></div>
 
 <header>
     <a href="#" aria-label="Home"><img alt="Minna Chan Logo" src="{{ "assets/images/logo.svg" | relURL }}"></a>
-    <i aria-hidden="true" class="fa fa-fw fa-bars icon large" onclick="sb_open()"></i>
-    <h2><b>Minna Chan</b></h2>
+    <button type="button" aria-label="Open navigation" class="icon nav-open large"><i aria-hidden="true" class="fa fa-fw fa-bars"></i></button>
+    <h2>Minna Chan</h2>
 </header>
 
-<div id="content" role="main">
+<main id="content">
 
+<!-- Cards use horizonal masonry layout. TODO replace with grid-template-rows masonry in 2027 -->
 <div id="card-container">
 {{ $pages := sort .Site.RegularPages "Date" "desc" }}
 {{ $hasModel := false }}
@@ -141,10 +141,10 @@
 {{ end }}        <div>{{ $page.Title }}</div>
     </div>
 <div class="modal" id="modal-{{ $anchor }}">
-        <button aria-label="Close modal" class="modal-close" onclick="closeModal('modal-{{ $anchor }}')">×</button>
+        <button aria-label="Close modal" class="modal-close">×</button>
         <div class="modal-content">
 {{ if gt (len $page.Params.images) 1 }}
-            <button aria-label="Previous slide" class="modal-nav modal-nav-prev" onclick="prevSlide(this)">❮</button>
+            <button aria-label="Previous slide" class="modal-nav modal-nav-prev">❮</button>
 {{ end }}
             <div class="carousel-container">
 {{ range $imgIndex, $img := $page.Params.images }}
@@ -172,7 +172,7 @@
 {{ end }}
             </div>
 {{ if gt (len $page.Params.images) 1 }}
-            <button aria-label="Next slide" class="modal-nav modal-nav-next" onclick="nextSlide(this)">❯</button>
+            <button aria-label="Next slide" class="modal-nav modal-nav-next">❯</button>
 {{ end }}
         </div>
         <div class="modal-info">
@@ -190,8 +190,8 @@
 </div>
 
 <div id="about">
-    <h3><b>About Me</b></h3>
-    <p>Aspiring <b>3D</b> modeler.</p>
+    <h3>About Me</h3>
+    <p>Aspiring 3D modeler.</p>
     <h3>Technical Skills</h3>
     <p>3D Modeling (Blender, Maya)</p>
     <div class="bar"><div style="width:95%">95%</div></div>
@@ -208,7 +208,7 @@
 
 <footer>
     <h3 id="contact">
-        <b>Contact Me</b>
+        Contact Me
         <a href="https://www.instagram.com/minnachan3d" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram icon"></i></a>
         <a href="https://twitter.com/minnachan3d" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter icon"></i></a>
         <a href="https://www.linkedin.com/in/minna-chan" aria-label="LinkedIn"><i aria-hidden="true" class="fab fa-linkedin icon"></i></a>
@@ -227,7 +227,7 @@
     </div>
 </footer>
 
-</div>
+</main>
 {{ $js := resources.Get "assets/app.js" | minify }}
 <script defer src="{{ $js.RelPermalink }}"></script>
 {{ if $hasModel }}

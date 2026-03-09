@@ -20,5 +20,4 @@ publishDir = "_site"
     method = 6
     useSharpYuv = true
 
-[sitemap]
-  disabled = true
+disableKinds = ['sitemap', 'rss']
