@@ -1,7 +1,7 @@
 ---
 title: "Perennial Character"
 date: 2026-05-15
-tags: ["3d", "environment"]
+tags: ["3d", "character"]
 images:
   - src: "textured.png"
     description: "The character model I made for my short film Perennial. Sculpted in ZBrush, textured in Substance Painter, and rigged in Maya."
